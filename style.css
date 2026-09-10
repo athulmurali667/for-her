@@ -682,15 +682,17 @@ body {
   border-radius: var(--radius-sm);
   box-shadow: 0 4px 15px rgba(232, 193, 112, 0.3);
   z-index: 3;
+  position: relative;
+  overflow: visible;
 }
 
 .cake-layer-3::before {
   content: '🎀';
   position: absolute;
-  top: -8px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 1.2rem;
+  top: 50%;
+  left: -14px;
+  transform: translateY(-50%);
+  font-size: 1rem;
 }
 
 /* --- Candles --- */
@@ -703,9 +705,10 @@ body {
   margin: -12px;
 }
 
-.candle-1 { top: 20px; left: 50%; transform: translateX(-50%); }
-.candle-2 { top: 25px; left: 35%; transform: translateX(-50%); }
-.candle-3 { top: 25px; left: 65%; transform: translateX(-50%); }
+/* Positioned relative to cake-layer-3 (parent) */
+.candle-1 { top: -44px; left: 50%; transform: translateX(-50%); }
+.candle-2 { top: -44px; left: 25%; transform: translateX(-50%); }
+.candle-3 { top: -44px; left: 75%; transform: translateX(-50%); }
 
 .candle-body {
   width: 8px;
