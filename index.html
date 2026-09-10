@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#0a0a1a">
+  <title>Happy Birthday Seethal ✨</title>
+  <meta name="description" content="A special birthday wish crafted with care.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Audio toggle -->
+  <button id="audio-toggle" class="audio-btn" title="Toggle Music">
+    <svg id="audio-icon-on" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+      <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+      <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+    </svg>
+    <svg id="audio-icon-off" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;">
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+      <line x1="23" y1="9" x2="17" y2="15"></line>
+      <line x1="17" y1="9" x2="23" y2="15"></line>
+    </svg>
+  </button>
+
+  <!-- ===== SCENE 0: INTRO / ENVELOPE ===== -->
+  <section id="scene-intro" class="scene active">
+    <canvas id="starfield"></canvas>
+    <div class="intro-content">
+      <div class="envelope-wrapper" id="envelope">
+        <div class="envelope-top"></div>
+        <div class="envelope-body">
+          <div class="letter">
+            <span class="letter-text">✨ A little something for you ✨</span>
+          </div>
+        </div>
+      </div>
+      <p class="intro-hint">click the envelope</p>
+    </div>
+  </section>
+
+  <!-- ===== SCENE 1: NAME REVEAL ===== -->
+  <section id="scene-name" class="scene">
+    <canvas id="particles-name"></canvas>
+    <div class="name-content">
+      <p class="happy-text">Happy Birthday</p>
+      <h1 class="name-text">Seethal</h1>
+      <div class="sparkle-line"></div>
+      <p class="subtitle-text">Today is your day ✨</p>
+      <button class="continue-btn" data-next="scene-messages">continue →</button>
+    </div>
+  </section>
+
+  <!-- ===== SCENE 2: MESSAGES ===== -->
+  <section id="scene-messages" class="scene">
+    <canvas id="particles-msg"></canvas>
+    <div class="messages-content">
+      <div class="msg-card" id="msg-0">
+        <div class="msg-icon">🌸</div>
+        <p class="msg-text">Some people just make the world a little more beautiful by being in it.</p>
+        <p class="msg-sub">You're one of them.</p>
+      </div>
+      <div class="msg-card" id="msg-1">
+        <div class="msg-icon">🌙</div>
+        <p class="msg-text">I hope this year brings you everything you've been quietly wishing for.</p>
+        <p class="msg-sub">You deserve all of it and more.</p>
+      </div>
+      <div class="msg-card" id="msg-2">
+        <div class="msg-icon">⭐</div>
+        <p class="msg-text">Thank you for being someone who makes ordinary days feel a little extra special.</p>
+        <p class="msg-sub">Never change.</p>
+      </div>
+      <div class="msg-progress">
+        <span class="msg-dot active" data-msg="0"></span>
+        <span class="msg-dot" data-msg="1"></span>
+        <span class="msg-dot" data-msg="2"></span>
+      </div>
+      <button class="continue-btn msg-next-btn" id="msg-continue">next →</button>
+    </div>
+  </section>
+
+  <!-- ===== SCENE 3: MEMORIES / QUALITIES ===== -->
+  <section id="scene-qualities" class="scene">
+    <canvas id="particles-qual"></canvas>
+    <div class="qualities-content">
+      <h2 class="qual-title">Things I appreciate about you</h2>
+      <div class="qual-grid">
+        <div class="qual-card" data-delay="0">
+          <div class="qual-emoji">💫</div>
+          <p>Your smile that lights up any room</p>
+        </div>
+        <div class="qual-card" data-delay="1">
+          <div class="qual-emoji">🎵</div>
+          <p>The way you laugh like nothing else matters</p>
+        </div>
+        <div class="qual-card" data-delay="2">
+          <div class="qual-emoji">🌿</div>
+          <p>Your kindness that makes everyone feel seen</p>
+        </div>
+        <div class="qual-card" data-delay="3">
+          <div class="qual-emoji">✨</div>
+          <p>How effortlessly you make everything better</p>
+        </div>
+        <div class="qual-card" data-delay="4">
+          <div class="qual-emoji">🦋</div>
+          <p>The strength you carry with such grace</p>
+        </div>
+        <div class="qual-card" data-delay="5">
+          <div class="qual-emoji">🌙</div>
+          <p>Just... being you. That's more than enough.</p>
+        </div>
+      </div>
+      <button class="continue-btn" data-next="scene-cake">time for cake 🎂</button>
+    </div>
+  </section>
+
+  <!-- ===== SCENE 4: CAKE ===== -->
+  <section id="scene-cake" class="scene">
+    <div class="cake-content">
+      <h2 class="cake-title">Make a wish 🌟</h2>
+      <p class="cake-subtitle">Close your eyes, think of something beautiful...</p>
+      <div class="cake-container" id="cake-container">
+        <div class="cake">
+          <div class="cake-layer cake-layer-3"></div>
+          <div class="cake-layer cake-layer-2"></div>
+          <div class="cake-layer cake-layer-1"></div>
+          <div class="cake-plate"></div>
+          <!-- Candles -->
+          <div class="candle candle-1">
+            <div class="candle-body"></div>
+            <div class="flame-container">
+              <div class="flame" id="flame-1"></div>
+              <div class="flame-glow"></div>
+            </div>
+          </div>
+          <div class="candle candle-2">
+            <div class="candle-body"></div>
+            <div class="flame-container">
+              <div class="flame" id="flame-2"></div>
+              <div class="flame-glow"></div>
+            </div>
+          </div>
+          <div class="candle candle-3">
+            <div class="candle-body"></div>
+            <div class="flame-container">
+              <div class="flame" id="flame-3"></div>
+              <div class="flame-glow"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="blow-btn" id="blow-btn">🌬️ Blow the candles</button>
+      <p class="blow-hint">or tap the candles one by one</p>
+    </div>
+  </section>
+
+  <!-- ===== SCENE 5: FINALE ===== -->
+  <section id="scene-finale" class="scene">
+    <canvas id="confetti-canvas"></canvas>
+    <div class="finale-content">
+      <div class="finale-wish">
+        <p class="finale-small">From someone who truly cares,</p>
+        <h1 class="finale-text">Happy Birthday, Seethal</h1>
+        <div class="finale-divider"></div>
+        <p class="finale-message">I made this little corner of the internet just for you, because some people deserve more than a text message on their birthday.</p>
+        <p class="finale-message secondary">Here's to another year of you being absolutely wonderful. 🥂</p>
+        <div class="finale-signature">
+          <p>— with warmth & care ✨</p>
+        </div>
+      </div>
+      <button class="restart-btn" id="restart-btn">✨ replay</button>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
